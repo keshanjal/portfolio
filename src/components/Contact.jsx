@@ -250,7 +250,7 @@ const Contact = () => {
       <div className="w-full text-white mt-10 flex flex-col items-center justify-center gap-3 text-sm sm:text-base">
         {/* LinkedIn */}
         <a
-          href="https://www.linkedin.com/in/anjalkesarwani"
+          href="https://www.linkedin.com/in/anjal-kesarwani-685508221/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 hover:text-[#915eff] transition-colors"
