@@ -1,6 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas } from "./components"
 import {default as Footer} from "./components/footer.jsx";
+import Education from "./components/Education.jsx";
 const App = () => {
   return (
     <BrowserRouter>
@@ -10,6 +11,7 @@ const App = () => {
           <Hero />
         </div>
         <About />
+        <Education/>
         <Experience />
         <Tech />
         <Works />
