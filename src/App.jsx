@@ -1,8 +1,8 @@
 import { BrowserRouter } from "react-router-dom";
-import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas } from "./components"
-import {default as Footer} from "./components/footer.jsx";
-import Education from "./components/Education.jsx";
-import CodingProfiles from "./components/CodingProfiles.jsx";
+import { AboutEducation, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas } from "./components"
+// import {default as Footer} from "./components/footer.jsx";
+// import Education from "./components/Education.jsx";
+// import CodingProfiles from "./components/CodingProfiles.jsx";
 const App = () => {
   return (
     <BrowserRouter>
@@ -11,9 +11,9 @@ const App = () => {
           <Navbar />
           <Hero />
         </div>
-        <About />
-        <Education/>
-        <CodingProfiles />
+        <AboutEducation />
+        {/* <Education/> */}
+        {/* <CodingProfiles /> */}
         <Experience />
         <Tech />
         <Works />

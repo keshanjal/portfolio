@@ -27,9 +27,17 @@ import {
 } from "../assets";
 
 export const navLinks = [
+   {
+    id: "home",
+    title: "Home",
+  },
   {
-    id: "about",
+    id: "about-education",
     title: "About",
+  },
+  {
+    id:"skills",
+    title: "Skills",
   },
   {
     id: "work",
@@ -117,7 +125,7 @@ const experiences = [
     company_name: "",
     icon: android_development,
     iconBg: "#383E56",
-    date: "Oct 2022 - Now",
+    date: "Sept 2024 - Now",
     points: [
       "Developing and maintaining Android applications using Kotlin and other related technologies.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
@@ -131,7 +139,7 @@ const experiences = [
     company_name: "",
     icon: web_development,
     iconBg: "#383E56",
-    date: "Oct 2022 - Now",
+    date: "May 2023 - Now",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
@@ -188,7 +196,7 @@ const testimonials = [
 
 const projects = [
   {
-   name: "Weather App",
+   name: "Weather App (Android)",
 description: `A Kotlin-based Android application that provides real-time weather information for any location. It allows users to search for cities and view current temperature, humidity, wind speed, and detailed weather conditions.`,
     tags: [
       {
@@ -209,7 +217,7 @@ description: `A Kotlin-based Android application that provides real-time weather
     link: link,
   },
   {
-   name: "Chat App",
+   name: "Chat App (Android)",
 description: `A real-time chat application developed in Kotlin for Android. It features user authentication, real-time messaging, and profile management using Firebase services such as Firebase Authentication, Realtime Database, and Firebase Storage.`,
     tags: [
       {
@@ -231,7 +239,7 @@ description: `A real-time chat application developed in Kotlin for Android. It f
    
   },
   {
-    name: "Drum Kit",
+    name: "Drum Kit (Web)",
     description:  `A simple and interactive web application that allows users to play different drum sounds by clicking on buttons or pressing corresponding keys on the keyboard. It showcases basic HTML, CSS, and JavaScript skills.`,
     tags: [
       {
@@ -253,7 +261,7 @@ description: `A real-time chat application developed in Kotlin for Android. It f
     deploy_link: "https://keshanjal.github.io/Drum-Kit/",
   },
    {
-  name: "Ecommerce",
+  name: "Ecommerce (Web)",
 description: `A full-stack Ecommerce web application built using React.js for the frontend, Redux for state management, and Node.js with Express.js for the backend. It allows users to browse products, add them to a cart, manage orders, and make secure payments.`,
     tags: [
       {

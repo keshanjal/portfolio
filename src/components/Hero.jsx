@@ -1,98 +1,84 @@
-// /* eslint-disable react/no-unescaped-entities */
-// import { styles } from '../style';
-// import { my_image } from "../assets";
-// import { Typewriter } from 'react-simple-typewriter';
-
-// const Hero = () => {
-//   return (
-//     <>
-//       <section className='relative w-full h-screen mx-auto '>
-//         <div className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}>
-//           <div className='flex flex-col justify-center items-center mt-5 '>
-//             <div className='w-5 h-5 rounded-full bg-[#915eff]' />
-//             <div className='w-1 sm:h-80 h-40 violet-gradient' />
-//           </div>
-//           <div className='flex gap-[10%] max-md:flex-col'>
-//             <div>
-//               <h1 className={`${styles.heroHeadText}`}>Hi, I'm <span className='text-[#915eff]'>Anjal</span></h1>
-//               <p className={`${styles.heroSubText} mt-2 text-white`}>I am a Competitive Programmer  <br className='sm:block hidden' />, Android app developer and a MERN stack developer</p>
-//             </div>
-//             <div className='max-md:w-full max-md:h-full flex items-start justify-center w-[50%] h-auto'>
-//               <img src={my_image} className="flex h-auto rounded-3xl w-[90%] max-md:w-[40%]  max-md:items-center max-md:mt-16 max-sm:w-[50%] max-sm:mt-14 max-[500px]:w-[70%] max-[500px]:mt-16 max-[300px]:w-[90%]" />
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-//     </>
-//   )
-// }
-
-// export default Hero
-
-
-
-
 /* eslint-disable react/no-unescaped-entities */
-import { styles } from '../style';
-import { my_image } from "../assets";
-import { Typewriter } from 'react-simple-typewriter';
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import * as THREE from "three";
+import NET from "vanta/dist/vanta.net.min";
 
 const Hero = () => {
+  const vantaRef = useRef(null);
+  const [vantaEffect, setVantaEffect] = useState(null);
+
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(
+        NET({
+          el: vantaRef.current,
+          THREE,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: 0x915eff,
+          backgroundColor: 0x0a1f44, // pleasant dark blue
+          points: 10.0,
+          maxDistance: 20.0,
+          spacing: 25.0,
+        })
+      );
+    }
+    return () => vantaEffect && vantaEffect.destroy();
+  }, [vantaEffect]);
+
   return (
-    <section className='relative w-full h-screen mx-auto'>
-      <div className={`absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5 px-6 md:px-10 lg:pl-20`}>
-        {/* Left vertical line */}
-        <div className='flex flex-col justify-center items-center mt-5'>
-          <div className='w-5 h-5 rounded-full bg-[#915eff]' />
-          <div className='w-1 sm:h-80 h-40 violet-gradient' />
-        </div>
+    <section
+      id="home"
+      ref={vantaRef}
+      className="relative w-full h-screen flex items-center justify-center overflow-hidden px-6 md:px-20 text-white"
+    >
+      {/* Overlay (dark transparent for readability) */}
+      <div className="absolute inset-0 bg-black/30 z-0 backdrop-blur-sm" />
 
-        {/* Text and image container */}
-        <div className='flex gap-[10%] max-md:flex-col w-full'>
-          {/* Text section */}
-          <div>
-            <h1 className={`${styles.heroHeadText} text-white`}>
-              Hi, I'm{' '}
-              <span className='text-[#915eff]'>
-                <Typewriter
-                  words={['Anjal']}
-                  loop={1}
-                  cursor
-                  cursorStyle='_'
-                  typeSpeed={100}
-                />
-              </span>
-            </h1>
+      {/* Fullscreen centered content */}
+      <div className="relative z-10 max-w-5xl w-full flex flex-col items-center justify-center text-center px-4">
+        <motion.p
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2 }}
+          className="text-lg font-light tracking-widest text-[#bbbbbb]"
+        >
+          Welcome to my Portfolio
+        </motion.p>
 
-            <p className={`${styles.heroSubText} mt-2 text-white`}>
-              I am a{' '}
-              <span className="text-[#915eff]">
-                <Typewriter
-                  words={[
-                    'Competitive Programmer',
-                    'Android App Developer',
-                    'MERN Stack Developer'
-                  ]}
-                  loop={true}
-                  cursor
-                  cursorStyle='_'
-                  typeSpeed={60}
-                  deleteSpeed={40}
-                  delaySpeed={1500}
-                />
-              </span>
-            </p>
-          </div>
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5 }}
+          className="mt-4 text-[42px] sm:text-[64px] md:text-[80px] font-extrabold leading-tight"
+        >
+          <span className="text-[#60a5fa]">Anjal</span> Kesarwani
+        </motion.h1>
 
-          {/* 👇 Image shifted right */}
-          <div className='max-md:w-full max-md:h-full flex items-start justify-end w-[40%] h-auto ml-auto pr-4'>
-            <img
-              src={my_image}
-              alt="profile"
-              className="flex h-auto rounded-3xl w-[90%] max-md:w-[40%] max-md:items-center max-md:mt-16 max-sm:w-[50%] max-sm:mt-14 max-[500px]:w-[70%] max-[500px]:mt-16 max-[300px]:w-[90%]"
-            />
-          </div>
-        </div>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 1 }}
+          className="mt-6 text-lg sm:text-xl text-white/80 max-w-2xl"
+        >
+         A <span className="text-[#60a5fa]">Problem Solver</span> who blends logic with creativity to build impactful digital solutions.
+Driven by clean code, performance, and user-centric design.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.8, duration: 1 }}
+          className="mt-12 text-sm text-white/70 animate-bounce"
+        >
+          ↓ Scroll to Explore
+        </motion.div>
       </div>
     </section>
   );
