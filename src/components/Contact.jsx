@@ -27,8 +27,8 @@ const Contact = () => {
     setLoading(true);
 
     emailjs.send(
-      'service_kpz8i0m',
-      'template_z1l44mm',
+      'service_6h8o21p',
+      'template_8seircd',
       {
         from_name: form.name,
         to_name: 'Anjal Kesarwani',
@@ -36,7 +36,7 @@ const Contact = () => {
         to_email: 'anjalkesarwaniinfo@gmail.com',
         message: form.message
       },
-      'u_8cOUDrYmdRCbqlP'
+      'Xgb0DXsWftgWxEpiQ' 
     )
       .then(() => {
         setLoading(false);
