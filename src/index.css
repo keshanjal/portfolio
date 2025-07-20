@@ -202,3 +202,18 @@
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
 }
+
+.neon-text {
+  text-shadow:
+    0 0 5px #00d1ff,
+    0 0 10px #00d1ff,
+    0 0 20px #00d1ff,
+    0 0 40px #00d1ff;
+}
+.neon-text:hover {
+  text-shadow:
+    0 0 10px #00d1ff,
+    0 0 20px #00d1ff,
+    0 0 30px #00d1ff,
+    0 0 40px #00d1ff;
+}

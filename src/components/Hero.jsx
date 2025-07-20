@@ -38,10 +38,10 @@ const Hero = () => {
       ref={vantaRef}
       className="relative w-full h-screen flex items-center justify-center overflow-hidden px-6 md:px-20 text-white"
     >
-      {/* Overlay (dark transparent for readability) */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/30 z-0 backdrop-blur-sm" />
 
-      {/* Fullscreen centered content */}
+      {/* Centered content */}
       <div className="relative z-10 max-w-5xl w-full flex flex-col items-center justify-center text-center px-4">
         <motion.p
           initial={{ opacity: 0, y: -10 }}
@@ -56,9 +56,10 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5 }}
-          className="mt-4 text-[42px] sm:text-[64px] md:text-[80px] font-extrabold leading-tight"
+          className="mt-4 text-[42px] sm:text-[64px] md:text-[80px] font-light tracking-widest uppercase"
         >
-          <span className="text-[#60a5fa]">Anjal</span> Kesarwani
+          {/* <span className="text-[#00d1ff] neon-text">Anjal</span>{" "} */}
+          <span className="text-white neon-text">ANJAL Kesarwani</span>
         </motion.h1>
 
         <motion.p
@@ -67,8 +68,7 @@ const Hero = () => {
           transition={{ delay: 0.8, duration: 1 }}
           className="mt-6 text-lg sm:text-xl text-white/80 max-w-2xl"
         >
-         A <span className="text-[#60a5fa]">Problem Solver</span> who blends logic with creativity to build impactful digital solutions.
-Driven by clean code, performance, and user-centric design.
+          A <span className="text-[#60a5fa]">Android Developer and MERN Stack Developer</span> who blends logic with creativity to build impactful digital solutions.
         </motion.p>
 
         <motion.div
